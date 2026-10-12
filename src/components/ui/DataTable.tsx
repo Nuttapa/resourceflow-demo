@@ -64,7 +64,9 @@ export function DataTable<Row>({
 
   return (
     <>
-      <div className="hidden md:block">
+      {/* The table keeps its natural minimum width; this wrapper scrolls it
+          inside the card instead of letting it paint past the card border. */}
+      <div className="hidden overflow-x-auto md:block">
         <table className="w-full border-collapse text-sm">
           <caption className="sr-only">{caption}</caption>
           <thead>
@@ -80,7 +82,9 @@ export function DataTable<Row>({
                   {column.header}
                 </th>
               ))}
-              {rowAction ? <th scope="col" className="px-5 py-2.5" /> : null}
+              {/* w-px + nowrap shrinks this column to exactly the width of its
+                  control, leaving the remaining space to the data columns. */}
+              {rowAction ? <th scope="col" className="w-px whitespace-nowrap px-5 py-2.5" /> : null}
             </tr>
           </thead>
           <tbody>
@@ -94,7 +98,9 @@ export function DataTable<Row>({
                     {column.cell(row)}
                   </td>
                 ))}
-                {rowAction ? <td className="px-5 py-3 text-right align-top">{rowAction(row)}</td> : null}
+                {rowAction ? (
+                  <td className="w-px whitespace-nowrap px-5 py-3 text-right align-top">{rowAction(row)}</td>
+                ) : null}
               </tr>
             ))}
           </tbody>
