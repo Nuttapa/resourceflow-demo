@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-bg: 248 250 252;
+  --c-surface: 255 255 255;
+  --c-elevated: 241 245 249;
+  --c-line: 226 232 240;
+  --c-fg: 15 23 42;
+  --c-muted: 100 116 139;
+  --c-accent: 67 56 202;
+  --c-accent-fg: 255 255 255;
+  --c-accent-soft: 238 242 255;
+  --c-success: 21 128 61;
+  --c-warning: 180 83 9;
+  --c-danger: 190 18 60;
+  --c-info: 3 105 161;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: 9 12 20;
+    --c-surface: 18 23 34;
+    --c-elevated: 28 35 50;
+    --c-line: 44 54 74;
+    --c-fg: 237 242 250;
+    --c-muted: 148 163 184;
+    --c-accent: 129 140 248;
+    --c-accent-fg: 12 16 26;
+    --c-accent-soft: 33 38 66;
+    --c-success: 74 222 128;
+    --c-warning: 251 191 36;
+    --c-danger: 251 113 133;
+    --c-info: 56 189 248;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg text-fg antialiased;
+  }
+
+  /* Visible, consistent focus ring for keyboard users. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50
+           focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-fg;
+  }
+}
