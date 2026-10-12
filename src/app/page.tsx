@@ -104,8 +104,8 @@ export default function DashboardPage() {
               <li className="flex items-start gap-2"><Badge tone="success">Built</Badge> 254 automated tests across 17 files, plus a verified static build</li>
             </ul>
             <p className="mt-4 text-xs text-muted">
-              Runs entirely in this browser. It has not been deployed or hosted anywhere, and there is no
-              server behind it.
+              This portfolio demo is hosted on Vercel and runs entirely in your browser. It uses simulated
+              data and does not connect to any real system or backend.
             </p>
           </CardBody>
         </Card>

@@ -184,7 +184,7 @@ Stated plainly, because they are part of the design rather than gaps I overlooke
 - **Frontend only.** No backend, no database, no API routes, no server actions. The application is a static export.
 - **Not authentication.** The role selector switches a simulated persona. There is no password, token or identity provider, and the permission checks run in the browser, where a user could bypass them with developer tools. They demonstrate authorisation *modelling*; production enforcement belongs on a server.
 - **Not a security-certified system.** Nothing here has been audited or certified, and it should not be read as a security product.
-- **Not deployed.** The project runs locally; it has not been published or used in production. *(อัปเดตบรรทัดนี้เมื่อใดก็ตามที่คุณนำไป deploy จริง ไม่ก่อนหน้านั้น)*
+- **Hosted as a static site, with nothing behind it.** This portfolio demo is hosted on Vercel at https://resourceflow-demo.vercel.app/ and runs entirely in your browser. It uses simulated data and does not connect to any real system or backend — hosting a static export does not make it a production system.
 - **Data is per browser.** State lives in one `localStorage` key and never leaves the machine; clearing site data resets the demo.
 - **UI behaviour is verified manually.** Unit tests cover the rule layer. Dialog focus handling, screen-reader announcements and responsive layout were checked by hand, not by automated browser tests.
 - **Fictional data.** Every user, email address (`@example.com`) and resource figure is invented for the demo.
